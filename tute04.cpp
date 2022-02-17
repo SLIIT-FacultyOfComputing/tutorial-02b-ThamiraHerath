@@ -13,8 +13,24 @@ Do not modify the main function.*/
 
 #include <iostream>
 
-long Factorial(int no);
-long nCr(int n, int r);
+long Factorial(int no){
+  long fac=1;
+  for(int r=no;r>=1;r--){
+    fac=fac*r;
+  }
+  return fac;
+}
+long nCr(int n, int r){
+  float n1,r1,nr1,nCr,nr;
+  n1=Factorial(n);
+  r1=Factorial(r);
+  nr=n-r;
+  nr1=Factorial(nr);
+  nCr= n1/r1*nr1;
+  return nCr;
+  
+  
+};
 
 int main() {
   int n, r;
@@ -25,5 +41,4 @@ int main() {
   std::cout << "nCr = ";
   std::cout << nCr(n,r);
   std::cout << std::endl;
-  return 0;
 }
